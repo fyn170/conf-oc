@@ -1,3 +1,10 @@
-payload:
-  # reject
-   - IP-CIDR,198.18.0.1/16,REJECT,no-resolve
+rule-providers:
+  Reject:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/reject.yaml"
+    path: "./rule_provider/reject.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
