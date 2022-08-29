@@ -8,7 +8,7 @@ port: 7890
 socks-port: 7891
 mixed-port: 7893
 mode: rule
-log-level: silent
+log-level: info
 allow-lan: true
 external-controller: 0.0.0.0:9090
 external-ui: "/usr/share/openclash/ui"
@@ -138,6 +138,15 @@ rule-providers:
     behavior: domain
     url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/stream.yaml"
     path: "./rule_provider/stream.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  Zerotier:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/zerotier.yaml"
+    path: "./rule_provider/zerotier.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
