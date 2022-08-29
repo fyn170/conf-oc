@@ -88,7 +88,7 @@ rule-providers:
   18+:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/saru.yaml"
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/saru.yaml"
     path: "./rule_provider/saru.yaml"
     health-check:
       enable: true
@@ -97,7 +97,7 @@ rule-providers:
   Ads:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/ads.yaml"
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/ads.yaml"
     path: "./rule_provider/ads.yaml"
     health-check:
       enable: true
@@ -106,7 +106,7 @@ rule-providers:
   Direct:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/direct.yaml"
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/direct.yaml"
     path: "./rule_provider/direct.yaml"
     health-check:
       enable: true
@@ -115,8 +115,17 @@ rule-providers:
   Gaming:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/gaming.yaml"
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/gaming.yaml"
     path: "./rule_provider/gaming.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  Reject:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/reject.yaml"
+    path: "./rule_provider/reject.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -124,7 +133,7 @@ rule-providers:
   Sosmed:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/sosmed.yaml"
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/sosmed.yaml"
     path: "./rule_provider/sosmed.yaml"
     health-check:
       enable: true
@@ -133,7 +142,7 @@ rule-providers:
   Stream:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/stream.yaml"
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/stream.yaml"
     path: "./rule_provider/stream.yaml"
     health-check:
       enable: true
@@ -142,7 +151,7 @@ rule-providers:
   Zerotier:
     type: http
     behavior: domain
-    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/rule_provider/zerotier.yaml"
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/zerotier.yaml"
     path: "./rule_provider/zerotier.yaml"
     health-check:
       enable: true
