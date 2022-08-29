@@ -39,11 +39,10 @@ dns:
   default-nameserver:
   - 8.8.8.8
   - 8.8.4.4
-proxies:
 proxy-providers:
   Server:
-    type: http
-    url: "https://raw.githubusercontent.com/fyn170/conf-oc/main/proxy_provider/server.yaml"
+    type: file
+    bhavior: classical
     path: "./proxy_provider/server.yaml"
     interval: 60
     health-check:
