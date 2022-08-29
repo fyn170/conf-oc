@@ -1,9 +1,10 @@
-payload:
-  #zerotier
-  - DOMAIN-SUFFIX,my.zerotier.com
-  - DOMAIN-SUFFIX,zerotier.com
-  - IP-CIDR,183.195.103.0/24 
-  - IP-CIDR,84.17.53.0/24
-  - IP-CIDR,50.7.252.0/24
-  - DST-PORT,9993
-  - DST-PORT,20431
+rule-providers:
+  Zerotier:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/zerotier.yaml"
+    path: "./rule_provider/zerotier.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
