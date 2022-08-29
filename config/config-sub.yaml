@@ -1,43 +1,40 @@
-redir-port: 7892
-tproxy-port: 7895
 port: 7890
 socks-port: 7891
+redir-port: 7892
 mixed-port: 7893
+tproxy-port: 7895
 mode: rule
-log-level: info
+log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
 external-ui: "/usr/share/openclash/ui"
-secret: "FyNn"
 bind-address: "*"
+unified-delay: true
 ipv6: false
-tun:
-  enable: true
-  stack: system
-  dns-hijack:
-  - tcp://8.8.8.8:53
-  - tcp://8.8.4.4:53
 profile:
   store-selected: true
-  store-fake-ip: true
 dns:
-  nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
-  - https://dns.adguard.com/dns-query
-  - https://dns-google.com/dns-query
-  - tls://dns.adguard.com
-  - tls://dns-google.com/
   enable: true
   ipv6: false
   enhanced-mode: redir-host
-  fake-ip-range: 198.18.0.1/16
-  listen: 127.0.0.1:7874
-  fake-ip-filter:
-  - "+.*"
+  listen: 0.0.0.0:7894
+  fallback-filter:
+    geoip: false
+    ipcidr:
+    - 240.0.0.0/4
+  nameserver:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+  fallback:
+    - tcp://1.1.1.1
+    - tcp://8.8.8.8
+    - 1.1.1.1
+    - 8.8.8.8
   default-nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
+    - 1.1.1.1
+    - 8.8.8.8
 proxy-providers:
   Server:
     type: file
