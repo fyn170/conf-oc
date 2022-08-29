@@ -1,0 +1,10 @@
+rule-providers:
+  Ads:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/ads.yaml"
+    path: "./rule_provider/ads.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
