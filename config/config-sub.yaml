@@ -86,6 +86,7 @@ rules:
 - RULE-SET,Gaming,Server
 - RULE-SET,Sosmed,Server
 - RULE-SET,Stream,Server
+- RULE-SET,Zerotier,Server
 - MATCH,GLOBAL
 rule-providers:
   18+:
