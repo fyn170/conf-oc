@@ -38,7 +38,6 @@ dns:
 proxy-providers:
   Server:
     type: file
-    bhavior: classical
     path: "./proxy_provider/server.yaml"
     health-check:
       enable: true
