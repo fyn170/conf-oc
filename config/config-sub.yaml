@@ -48,13 +48,13 @@ proxy-groups:
 - name: 18+
   type: select
   proxies:
-  - DIRECT
   - REJECT
+  - DIRECT
 - name: ADS
   type: select
   proxies:
-  - DIRECT
   - REJECT
+  - DITECT
 - name: Chat
   type: select
   strategy: consistent-hashing
