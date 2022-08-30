@@ -53,7 +53,7 @@ proxy-groups:
   type: select
   proxies:
   - REJECT
-  - DITECT
+  - DIRECT
 - name: Chat
   type: select
   strategy: consistent-hashing
