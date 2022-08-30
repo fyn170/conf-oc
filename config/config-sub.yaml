@@ -128,7 +128,6 @@ rule-providers:
       interval: 300
   Sosmed:
     type: http
-    behavior: domain
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/sosmed.yaml"
     path: "./rule_provider/sosmed.yaml"
     health-check:
