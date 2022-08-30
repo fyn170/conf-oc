@@ -83,7 +83,7 @@ rules:
 rule-providers:
   18+:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/saru.yaml"
     path: "./rule_provider/saru.yaml"
     health-check:
@@ -92,7 +92,7 @@ rule-providers:
       interval: 300
   Ads:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/ads.yaml"
     path: "./rule_provider/ads.yaml"
     health-check:
@@ -101,7 +101,7 @@ rule-providers:
       interval: 300
   Direct:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/direct.yaml"
     path: "./rule_provider/direct.yaml"
     health-check:
@@ -110,7 +110,7 @@ rule-providers:
       interval: 300
   Gaming:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/gaming.yaml"
     path: "./rule_provider/gaming.yaml"
     health-check:
@@ -119,7 +119,7 @@ rule-providers:
       interval: 300
   Reject:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/reject.yaml"
     path: "./rule_provider/reject.yaml"
     health-check:
@@ -128,7 +128,7 @@ rule-providers:
       interval: 300
   Sosmed:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/sosmed.yaml"
     path: "./rule_provider/sosmed.yaml"
     health-check:
@@ -137,7 +137,7 @@ rule-providers:
       interval: 300
   Stream:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/stream.yaml"
     path: "./rule_provider/stream.yaml"
     health-check:
@@ -146,7 +146,7 @@ rule-providers:
       interval: 300
   Zerotier:
     type: http
-    behavior: domain
+    behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/zerotier.yaml"
     path: "./rule_provider/zerotier.yaml"
     health-check:
