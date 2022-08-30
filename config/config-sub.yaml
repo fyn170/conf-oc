@@ -48,7 +48,7 @@ proxy-groups:
   type: select
   proxies:
   - REJECT
-  - DIRECT
+  - Server
 - name: ADS
   type: select
   proxies:
@@ -70,7 +70,7 @@ proxy-groups:
   url: http://www.gstatic.com/generate_204
   interval: '300'
 rules:
-- RULE-SET,18+,Server
+- RULE-SET,18+,18+
 - RULE-SET,Ads,ADS
 - RULE-SET,Direct,DIRECT
 - RULE-SET,Gaming,Server
