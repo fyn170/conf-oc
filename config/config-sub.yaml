@@ -72,7 +72,6 @@ proxy-groups:
 rules:
 - RULE-SET,18+,18+
 - RULE-SET,Ads,ADS
-- RULE-SET,Direct,DIRECT
 - RULE-SET,Gaming,Server
 - RULE-SET,Sosmed,Server
 - RULE-SET,Stream,Server
@@ -93,15 +92,6 @@ rule-providers:
     behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/ads.yaml"
     path: "./rule_provider/ads.yaml"
-    health-check:
-      enable: true
-      url: http://www.gstatic.com/generate_204
-      interval: 300
-  Direct:
-    type: http
-    behavior: classical
-    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/direct.yaml"
-    path: "./rule_provider/direct.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
