@@ -1,6 +1,6 @@
 rule-providers:
   Ads:
-    type: http
+    type: script
     behavior: domain
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/ads.yaml"
     path: "./rule_provider/ads.yaml"
