@@ -1,6 +1,6 @@
 rule-providers:
   18+:
-    type: http
+    type: script
     behavior: domain
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/saru.yaml"
     path: "./rule_provider/saru.yaml"
