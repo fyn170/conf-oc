@@ -1,6 +1,6 @@
 rule-providers:
   Sosmed:
-    type: http
+    type: script
     behavior: domain
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/sosmed.yaml"
     path: "./rule_provider/sosmed.yaml"
