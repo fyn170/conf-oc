@@ -1,6 +1,6 @@
 rule-providers:
   Stream:
-    type: http
+    type: script
     behavior: domain
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/stream.yaml"
     path: "./rule_provider/stream.yaml"
