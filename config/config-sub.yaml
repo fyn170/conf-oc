@@ -76,7 +76,7 @@ rules:
 - RULE-SET,Sosmed,Server
 - RULE-SET,Stream,Server
 - RULE-SET,Zerotier,Server
-- MATCH,Server
+- MATCH,GLOBAL
 rule-providers:
   18+:
     type: http
