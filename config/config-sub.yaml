@@ -69,9 +69,6 @@ proxy-groups:
   - Server
   url: http://www.gstatic.com/generate_204
   interval: '300'
-script:
-  shortcuts:
-    limit-child: in_cidr(src_ip,'192.168.1.143/32') and (time.now().hour > 14 or time.now().hour < 1)
 rules:
 - RULE-SET,18+,18+
 - RULE-SET,Ads,ADS
@@ -79,8 +76,7 @@ rules:
 - RULE-SET,Sosmed,Server
 - RULE-SET,Stream,Server
 - RULE-SET,Zerotier,Server
-- MATCH,GLOBAL
-- SCRIPT,limit-child,REJECT
+- MATCH,Server
 rule-providers:
   18+:
     type: http
