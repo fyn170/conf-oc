@@ -4,37 +4,43 @@ redir-port: 7892
 mixed-port: 7893
 tproxy-port: 7895
 mode: rule
-log-level: info
+log-level: silent
 allow-lan: true
 external-controller: 0.0.0.0:9090
 external-ui: "/usr/share/openclash/ui"
 bind-address: "*"
 unified-delay: true
-ipv6: false
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+  - tcp://8.8.8.8:53
+  - tcp://8.8.4.4:53
 profile:
   store-selected: true
+  store-fake-ip: true
 dns:
+  nameserver:
+  - 8.8.8.8
+  - 8.8.4.4
+  - 94.140.14.14
+  - 94.140.15.15
+  - https://dns.adguard-dns.com/dns-query
+  - https://dns.google/dns-query
+  - tls://dns.adguard-dns.com
+  - tls://dns.google
   enable: true
   ipv6: false
   enhanced-mode: redir-host
-  listen: 0.0.0.0:7894
-  fallback-filter:
-    geoip: false
-    ipcidr:
-    - 240.0.0.0/4
-  nameserver:
-    - https://cloudflare-dns.com/dns-query
-    - https://dns.google/dns-query
-    - tls://1.1.1.1:853
-    - tls://8.8.8.8:853
-  fallback:
-    - tcp://1.1.1.1
-    - tcp://8.8.8.8
-    - 1.1.1.1
-    - 8.8.8.8
+  fake-ip-range: 198.18.0.1/16
+  listen: 127.0.0.1:7874
+  fake-ip-filter:
+  - "+.*"
   default-nameserver:
-    - 1.1.1.1
-    - 8.8.8.8
+  - 8.8.8.8
+  - 8.8.4.4
+  - 94.140.14.14
+  - 94.140.15.15
 proxy-providers:
   Server:
     type: file
@@ -49,7 +55,7 @@ proxy-groups:
   proxies:
   - REJECT
   - Server
-- name: ADS
+- name: Ads
   type: select
   proxies:
   - REJECT
@@ -62,16 +68,18 @@ proxy-groups:
   - DIRECT
   - Server
 - name: Server
-  type: url-test
+  type: load-balance
   strategy: consistent-hashing
   disable-udp: false
   use:
   - Server
-  url: http://www.gstatic.com/generate_204
-  interval: '300'
+  health-check:
+    enable: true
+    url: http://www.gstatic.com/generate_204
+    interval: 300
 rules:
 - RULE-SET,18+,18+
-- RULE-SET,Ads,ADS
+- RULE-SET,Ads,Ads
 - RULE-SET,Gaming,Server
 - RULE-SET,Sosmed,Server
 - RULE-SET,Stream,Server
