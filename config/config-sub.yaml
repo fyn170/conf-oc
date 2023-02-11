@@ -80,7 +80,9 @@ proxy-groups:
 rules:
 - RULE-SET,18+,18+
 - RULE-SET,Ads,Ads
+- RULE-SET,Banking,Server
 - RULE-SET,Gaming,Server
+- RULE-SET,Olshop,Server
 - RULE-SET,Sosmed,Server
 - RULE-SET,Stream,Server
 - RULE-SET,Zerotier,Server
