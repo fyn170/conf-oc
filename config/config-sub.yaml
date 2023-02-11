@@ -69,7 +69,7 @@ proxy-groups:
   - Server
 - name: Server
   type: load-balance
-  strategy: consistent-hashing
+  strategy: round-robin
   disable-udp: false
   use:
   - Server
@@ -78,15 +78,15 @@ proxy-groups:
     url: http://www.gstatic.com/generate_204
     interval: 300
 rules:
-- RULE-SET,18+,18+
-- RULE-SET,Ads,Ads
-- RULE-SET,Banking,Server
-- RULE-SET,Gaming,Server
-- RULE-SET,Olshop,Server
-- RULE-SET,Sosmed,Server
-- RULE-SET,Stream,Server
-- RULE-SET,Zerotier,Server
-- MATCH,GLOBAL
+  - RULE-SET,18+,18+
+  - RULE-SET,Ads,Ads
+  - RULE-SET,Banking,Server
+  - RULE-SET,Gaming,Server
+  - RULE-SET,Olshop,Server
+  - RULE-SET,Sosmed,Server
+  - RULE-SET,Stream,Server
+  - RULE-SET,Zerotr,Server
+  - MATCH,GLOBAL
 rule-providers:
   18+:
     type: http
@@ -102,6 +102,15 @@ rule-providers:
     behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/ads.yaml"
     path: "./rule_provider/ads.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
+  Banking:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/banking.yaml"
+    path: "./rule_provider/banking.yaml"
     health-check:
       enable: true
       url: http://www.gstatic.com/generate_204
@@ -124,6 +133,15 @@ rule-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
+  Olshop:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/olshop.yaml"
+    path: "./rule_provider/olshop.yaml"
+    health-check:
+      enable: true
+      url: http://www.gstatic.com/generate_204
+      interval: 300
   Sosmed:
     type: http
     behavior: classical
@@ -142,7 +160,7 @@ rule-providers:
       enable: true
       url: http://www.gstatic.com/generate_204
       interval: 300
-  Zerotier:
+  Zerotr:
     type: http
     behavior: classical
     url: "https://raw.githubusercontent.com/fyn170/conf-cfm/main/confs/rule/zerotier.yaml"
